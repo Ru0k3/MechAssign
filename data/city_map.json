@@ -1,0 +1,519 @@
+{
+    "source":  "Custom maze graph",
+    "attribution":  "Original maze layout for the AI dispatch project",
+    "nodes":  [
+                  {
+                      "id":  "N1",
+                      "x":  55,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N2",
+                      "x":  125,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N3",
+                      "x":  195,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N4",
+                      "x":  265,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N5",
+                      "x":  335,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N6",
+                      "x":  405,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N7",
+                      "x":  475,
+                      "y":  50
+                  },
+                  {
+                      "id":  "N8",
+                      "x":  55,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N9",
+                      "x":  125,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N10",
+                      "x":  195,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N11",
+                      "x":  265,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N12",
+                      "x":  335,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N13",
+                      "x":  405,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N14",
+                      "x":  475,
+                      "y":  112
+                  },
+                  {
+                      "id":  "N15",
+                      "x":  55,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N16",
+                      "x":  125,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N17",
+                      "x":  195,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N18",
+                      "x":  265,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N19",
+                      "x":  335,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N20",
+                      "x":  405,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N21",
+                      "x":  475,
+                      "y":  174
+                  },
+                  {
+                      "id":  "N22",
+                      "x":  55,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N23",
+                      "x":  125,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N24",
+                      "x":  195,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N25",
+                      "x":  265,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N26",
+                      "x":  335,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N27",
+                      "x":  405,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N28",
+                      "x":  475,
+                      "y":  236
+                  },
+                  {
+                      "id":  "N29",
+                      "x":  55,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N30",
+                      "x":  125,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N31",
+                      "x":  195,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N32",
+                      "x":  265,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N33",
+                      "x":  335,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N34",
+                      "x":  405,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N35",
+                      "x":  475,
+                      "y":  298
+                  },
+                  {
+                      "id":  "N36",
+                      "x":  55,
+                      "y":  360
+                  },
+                  {
+                      "id":  "N37",
+                      "x":  125,
+                      "y":  360
+                  },
+                  {
+                      "id":  "N38",
+                      "x":  195,
+                      "y":  360
+                  }
+              ],
+    "edges":  [
+                  {
+                      "road_id":  "R1",
+                      "node_a":  "N1",
+                      "node_b":  "N8",
+                      "distance":  65.10,
+                      "name":  "Maze passage 1"
+                  },
+                  {
+                      "road_id":  "R2",
+                      "node_a":  "N8",
+                      "node_b":  "N9",
+                      "distance":  70,
+                      "name":  "Maze passage 2"
+                  },
+                  {
+                      "road_id":  "R3",
+                      "node_a":  "N2",
+                      "node_b":  "N9",
+                      "distance":  62,
+                      "name":  "Maze passage 3"
+                  },
+                  {
+                      "road_id":  "R4",
+                      "node_a":  "N2",
+                      "node_b":  "N3",
+                      "distance":  80.5,
+                      "name":  "Maze passage 4"
+                  },
+                  {
+                      "road_id":  "R5",
+                      "node_a":  "N3",
+                      "node_b":  "N4",
+                      "distance":  77,
+                      "name":  "Maze passage 5"
+                  },
+                  {
+                      "road_id":  "R6",
+                      "node_a":  "N4",
+                      "node_b":  "N11",
+                      "distance":  62,
+                      "name":  "Maze passage 6"
+                  },
+                  {
+                      "road_id":  "R7",
+                      "node_a":  "N11",
+                      "node_b":  "N18",
+                      "distance":  71.3,
+                      "name":  "Maze passage 7"
+                  },
+                  {
+                      "road_id":  "R8",
+                      "node_a":  "N17",
+                      "node_b":  "N18",
+                      "distance":  84,
+                      "name":  "Maze passage 8"
+                  },
+                  {
+                      "road_id":  "R9",
+                      "node_a":  "N16",
+                      "node_b":  "N17",
+                      "distance":  73.5,
+                      "name":  "Maze passage 9"
+                  },
+                  {
+                      "road_id":  "R10",
+                      "node_a":  "N16",
+                      "node_b":  "N23",
+                      "distance":  68.2,
+                      "name":  "Maze passage 10"
+                  },
+                  {
+                      "road_id":  "R11",
+                      "node_a":  "N23",
+                      "node_b":  "N30",
+                      "distance":  62,
+                      "name":  "Maze passage 11"
+                  },
+                  {
+                      "road_id":  "R12",
+                      "node_a":  "N30",
+                      "node_b":  "N31",
+                      "distance":  84,
+                      "name":  "Maze passage 12"
+                  },
+                  {
+                      "road_id":  "R13",
+                      "node_a":  "N31",
+                      "node_b":  "N32",
+                      "distance":  70,
+                      "name":  "Maze passage 13"
+                  },
+                  {
+                      "road_id":  "R14",
+                      "node_a":  "N25",
+                      "node_b":  "N32",
+                      "distance":  71.3,
+                      "name":  "Maze passage 14"
+                  },
+                  {
+                      "road_id":  "R15",
+                      "node_a":  "N25",
+                      "node_b":  "N26",
+                      "distance":  80.5,
+                      "name":  "Maze passage 15"
+                  },
+                  {
+                      "road_id":  "R16",
+                      "node_a":  "N19",
+                      "node_b":  "N26",
+                      "distance":  62,
+                      "name":  "Maze passage 16"
+                  },
+                  {
+                      "road_id":  "R17",
+                      "node_a":  "N19",
+                      "node_b":  "N20",
+                      "distance":  84,
+                      "name":  "Maze passage 17"
+                  },
+                  {
+                      "road_id":  "R18",
+                      "node_a":  "N20",
+                      "node_b":  "N21",
+                      "distance":  80.5,
+                      "name":  "Maze passage 18"
+                  },
+                  {
+                      "road_id":  "R19",
+                      "node_a":  "N14",
+                      "node_b":  "N21",
+                      "distance":  62,
+                      "name":  "Maze passage 19"
+                  },
+                  {
+                      "road_id":  "R20",
+                      "node_a":  "N7",
+                      "node_b":  "N14",
+                      "distance":  74.4,
+                      "name":  "Maze passage 20"
+                  },
+                  {
+                      "road_id":  "R21",
+                      "node_a":  "N6",
+                      "node_b":  "N7",
+                      "distance":  73.5,
+                      "name":  "Maze passage 21"
+                  },
+                  {
+                      "road_id":  "R22",
+                      "node_a":  "N6",
+                      "node_b":  "N13",
+                      "distance":  62,
+                      "name":  "Maze passage 22"
+                  },
+                  {
+                      "road_id":  "R23",
+                      "node_a":  "N12",
+                      "node_b":  "N13",
+                      "distance":  84,
+                      "name":  "Maze passage 23"
+                  },
+                  {
+                      "road_id":  "R24",
+                      "node_a":  "N5",
+                      "node_b":  "N12",
+                      "distance":  74.4,
+                      "name":  "Maze passage 24"
+                  },
+                  {
+                      "road_id":  "R25",
+                      "node_a":  "N21",
+                      "node_b":  "N28",
+                      "distance":  74.4,
+                      "name":  "Maze passage 25"
+                  },
+                  {
+                      "road_id":  "R26",
+                      "node_a":  "N28",
+                      "node_b":  "N35",
+                      "distance":  74.4,
+                      "name":  "Maze passage 26"
+                  },
+                  {
+                      "road_id":  "R27",
+                      "node_a":  "N34",
+                      "node_b":  "N35",
+                      "distance":  80.5,
+                      "name":  "Maze passage 27"
+                  },
+                  {
+                      "road_id":  "R28",
+                      "node_a":  "N27",
+                      "node_b":  "N34",
+                      "distance":  65.1,
+                      "name":  "Maze passage 28"
+                  },
+                  {
+                      "road_id":  "R29",
+                      "node_a":  "N33",
+                      "node_b":  "N34",
+                      "distance":  70,
+                      "name":  "Maze passage 29"
+                  },
+                  {
+                      "road_id":  "R30",
+                      "node_a":  "N24",
+                      "node_b":  "N25",
+                      "distance":  80.5,
+                      "name":  "Maze passage 30"
+                  },
+                  {
+                      "road_id":  "R31",
+                      "node_a":  "N31",
+                      "node_b":  "N38",
+                      "distance":  62,
+                      "name":  "Maze passage 31"
+                  },
+                  {
+                      "road_id":  "R32",
+                      "node_a":  "N37",
+                      "node_b":  "N38",
+                      "distance":  77,
+                      "name":  "Maze passage 32"
+                  },
+                  {
+                      "road_id":  "R33",
+                      "node_a":  "N36",
+                      "node_b":  "N37",
+                      "distance":  77.0,
+                      "name":  "Maze passage 33"
+                  },
+                  {
+                      "road_id":  "R34",
+                      "node_a":  "N29",
+                      "node_b":  "N36",
+                      "distance":  71.30,
+                      "name":  "Maze passage 34"
+                  },
+                  {
+                      "road_id":  "R35",
+                      "node_a":  "N22",
+                      "node_b":  "N29",
+                      "distance":  71.30,
+                      "name":  "Maze passage 35"
+                  },
+                  {
+                      "road_id":  "R36",
+                      "node_a":  "N15",
+                      "node_b":  "N22",
+                      "distance":  71.30,
+                      "name":  "Maze passage 36"
+                  },
+                  {
+                      "road_id":  "R37",
+                      "node_a":  "N10",
+                      "node_b":  "N17",
+                      "distance":  71.3,
+                      "name":  "Maze passage 37"
+                  },
+                  {
+                      "road_id":  "R38",
+                      "node_a":  "N23",
+                      "node_b":  "N24",
+                      "distance":  70,
+                      "name":  "Maze passage 38"
+                  },
+                  {
+                      "road_id":  "R39",
+                      "node_a":  "N26",
+                      "node_b":  "N33",
+                      "distance":  74.4,
+                      "name":  "Maze passage 39"
+                  },
+                  {
+                      "road_id":  "R40",
+                      "node_a":  "N9",
+                      "node_b":  "N10",
+                      "distance":  84,
+                      "name":  "Maze passage 40"
+                  },
+                  {
+                      "road_id":  "R41",
+                      "node_a":  "N4",
+                      "node_b":  "N5",
+                      "distance":  84,
+                      "name":  "Maze passage 41"
+                  },
+                  {
+                      "road_id":  "R42",
+                      "node_a":  "N27",
+                      "node_b":  "N28",
+                      "distance":  77,
+                      "name":  "Maze passage 42"
+                  },
+                  {
+                      "road_id":  "R43",
+                      "node_a":  "N9",
+                      "node_b":  "N16",
+                      "distance":  62,
+                      "name":  "Maze passage 43"
+                  },
+                  {
+                      "road_id":  "R44",
+                      "node_a":  "N29",
+                      "node_b":  "N30",
+                      "distance":  80.50,
+                      "name":  "Maze passage 44"
+                  },
+                  {
+                      "road_id":  "R45",
+                      "node_a":  "N30",
+                      "node_b":  "N37",
+                      "distance":  71.3,
+                      "name":  "Maze passage 45"
+                  }
+              ],
+    "zones":  [
+
+              ],
+    "landmarks":  [
+
+                  ]
+}

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "S1",
+    "name": "North Engine Garage",
+    "type": "shop",
+    "location": "N2",
+    "specialty": "engine",
+    "available": true
+  },
+  {
+    "id": "S2",
+    "name": "Central Brake Works",
+    "type": "shop",
+    "location": "N18",
+    "specialty": "brakes",
+    "available": true
+  },
+  {
+    "id": "S3",
+    "name": "West Glass Repair",
+    "type": "shop",
+    "location": "N14",
+    "specialty": "window/glass",
+    "available": true
+  },
+  {
+    "id": "S4",
+    "name": "South Tire Station",
+    "type": "shop",
+    "location": "N33",
+    "specialty": "tires",
+    "available": true
+  },
+  {
+    "id": "S5",
+    "name": "East Exhaust Bay",
+    "type": "shop",
+    "location": "N26",
+    "specialty": "exhaust",
+    "available": true
+  },
+  {
+    "id": "S6",
+    "name": "Maze Mechanics",
+    "type": "shop",
+    "location": "N29",
+    "specialty": "internal parts",
+    "available": true
+  },
+  {
+    "id": "S7",
+    "name": "Signal Electronics",
+    "type": "shop",
+    "location": "N6",
+    "specialty": "electronics",
+    "available": true
+  },
+  {
+    "id": "P1",
+    "name": "Main Parts Depot",
+    "type": "store",
+    "location": "N24",
+    "stock": [
+      "engine",
+      "brakes",
+      "window/glass",
+      "tires",
+      "exhaust",
+      "internal parts",
+      "electronics"
+    ],
+    "available": true
+  },
+  {
+    "id": "P2",
+    "name": "Northwest Auto Supply",
+    "type": "store",
+    "location": "N9",
+    "stock": [
+      "engine",
+      "brakes",
+      "tires",
+      "electronics"
+    ],
+    "available": true
+  },
+  {
+    "id": "P3",
+    "name": "Southern Parts Dock",
+    "type": "store",
+    "location": "N37",
+    "stock": [
+      "window/glass",
+      "exhaust",
+      "internal parts"
+    ],
+    "available": true
+  }
+]
