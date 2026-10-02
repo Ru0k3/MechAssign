@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Car Breakdown Dispatch System</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header><div><p class="eyebrow">CLASSICAL AI LAB</p><h1>Car Breakdown Dispatch</h1><p class="subtitle">Explainable routing for a stranded driver</p></div><div class="status">SYSTEM READY <span></span></div></header>
+  <main>
+    <section class="map-card"><div class="section-title"><div><h2>Dispatch maze</h2><p>Choose a corridor to place the breakdown marker.</p></div><div id="selected-road">No corridor selected</div></div>
+      <svg id="city-map" viewBox="0 0 540 420" role="img" aria-label="Interactive maze map for dispatch routing"></svg>
+      <div class="map-legend"><span><i class="legend-dot shop-dot"></i> Repair shop</span><span><i class="legend-dot store-dot"></i> Parts depot</span><span>Click a corridor to start</span></div>
+    </section>
+    <aside class="side-card"><h2>Dispatch trace</h2><div id="request-panel" class="request-panel"><p class="muted">Select a road to begin.</p></div><div class="trace-head"><span>LIVE ALGORITHM LOG</span><button id="delay-button" disabled>Simulate delay</button></div><div id="stage" class="stage">Awaiting request</div><pre id="logs">No trace yet.</pre></aside>
+  </main>
+  <div id="popup" class="popup hidden"><div class="popup-inner"><button id="close-popup" class="close">×</button><p class="eyebrow">NEW BREAKDOWN</p><h2>Tell us what failed</h2><label>Damaged part<select id="damage-type"></select></label><label id="question-label">Follow-up answer<select id="answer"><option value="yes">Yes</option><option value="no">No</option></select></label><label class="check"><input type="checkbox" id="has-part"> I already have the replacement part</label><button id="dispatch-button" class="primary">Dispatch response team</button></div></div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
