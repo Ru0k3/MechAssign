@@ -177,7 +177,9 @@ main {
 .stage { margin: 8px 0; color: var(--teal); font-size: 13px; font-weight: 700; }
 
 .side-card pre {
-  flex: 1;
+  flex: 0 1 360px;
+  min-height: 0;
+  max-height: 360px;
   overflow: auto;
   padding: 14px;
   border-radius: 10px;

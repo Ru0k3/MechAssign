@@ -6,10 +6,27 @@ const questionLabel = document.getElementById('question-label');
 const logs = document.getElementById('logs');
 const stage = document.getElementById('stage');
 const delayButton = document.getElementById('delay-button');
+const requestPanel = document.getElementById('request-panel');
 let city = null;
 let selected = {road_id:null, position:null};
 let lastPlan = null;
 let lastCoordination = null;
+let lastShopName = '';
+let lastPartsSource = '';
+
+function renderCoordination(){
+  const technicianEta=lastCoordination.technician_eta;
+  const partsEta=lastCoordination.parts_eta;
+  requestPanel.replaceChildren();
+  const shop=document.createElement('strong');
+  shop.textContent=lastShopName;
+  const details=document.createElement('span');
+  details.className='muted';
+  details.append(document.createTextNode('Technician ETA '+technicianEta.toFixed(1)+' min · parts from '+lastPartsSource+' ETA '+partsEta.toFixed(1)+' min'));
+  details.append(document.createElement('br'));
+  details.append(document.createTextNode('Repair ready in '+Math.max(technicianEta,partsEta).toFixed(1)+' min'));
+  requestPanel.append(shop,document.createElement('br'),details);
+}
 
 function node(id){ for(const item of city.nodes){ if(item.id===id) return item; } return null; }
 function make(tag, attrs, text=''){ const item=document.createElementNS('http://www.w3.org/2000/svg',tag); for(const key in attrs){item.setAttribute(key,attrs[key]);} item.textContent=text; return item; }
@@ -110,20 +127,47 @@ async function dispatch(){
   lastPlan=result.plan; lastCoordination=result.coordination; logs.textContent='';
   for(const item of result.logs){logs.textContent+=item+'\n';stage.textContent=item.split(']')[0].replace('[','')+'…';await new Promise(resolve=>setTimeout(resolve,30));}
   renderRoutes(result); delayButton.disabled=false;
-  document.querySelector('.request-panel').innerHTML='<strong>'+result.shop.name+'</strong><br><span class="muted">ETA '+result.coordination.technician_eta.toFixed(1)+' min · '+(result.store?result.store.name:'part in vehicle')+'</span>';
+  lastShopName=result.shop.name;
+  lastPartsSource=result.store?result.store.name:'vehicle';
+  renderCoordination();
   stage.textContent='Plan ready — routes synchronized';
 }
 
 async function simulateDelay(){
-  const response=await fetch('/simulate-delay',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-    plan:lastPlan,
-    completed_actions:['diagnose','assign shop'],
-    reason:'technician held at previous job',
-    technician_eta:lastCoordination.technician_eta,
-    parts_eta:lastCoordination.parts_eta,
-    delay_minutes:10
-  })});
-  const result=await response.json(); logs.textContent+='\n'+result.log+'\n'; stage.textContent='Replanned remaining actions';
+  delayButton.disabled=true;
+  stage.textContent='Replanning after a 10-minute technician delay…';
+  try{
+    const previousCoordination=lastCoordination;
+    const delayMinutes=10;
+    const response=await fetch('/simulate-delay',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+      plan:lastPlan,
+      completed_actions:['diagnose','assign shop'],
+      reason:'technician held at previous job',
+      technician_eta:previousCoordination.technician_eta,
+      parts_eta:previousCoordination.parts_eta,
+      delay_minutes:delayMinutes
+    })});
+    const result=await response.json();
+    if(!response.ok){throw new Error(result.error||'The server could not replan the dispatch.');}
+    if(!result.updated_coordination){throw new Error('The server did not return updated arrival coordination.');}
+
+    lastPlan=result.steps;
+    lastCoordination=result.updated_coordination;
+    renderCoordination();
+    const technicianEta=lastCoordination.technician_eta;
+    const partsEta=lastCoordination.parts_eta;
+    const remaining=result.steps.map(step=>step.action);
+    logs.textContent+='\n[SIMULATION] Technician delayed by '+delayMinutes+' min: technician held at previous job.\n'
+      +'[ETA UPDATE] Technician: '+previousCoordination.technician_eta.toFixed(1)+' → '+technicianEta.toFixed(1)+' min; parts: '+partsEta.toFixed(1)+' min.\n'
+      +'[REPLAN] Remaining actions: '+(remaining.length?remaining.join(', '):'none')+'. Repair ready in '+Math.max(technicianEta,partsEta).toFixed(1)+' min.\n';
+    stage.textContent='Delay applied — repair now ready in '+Math.max(technicianEta,partsEta).toFixed(1)+' min';
+  }catch(error){
+    const message=error instanceof Error?error.message:'Unexpected replanning error.';
+    logs.textContent+='\n[ERROR] '+message+'\n';
+    stage.textContent='Replan failed: '+message;
+  }finally{
+    delayButton.disabled=false;
+  }
 }
 
 damage.addEventListener('change',()=>{questionLabel.firstChild.textContent=' '+(window.questions[damage.value]||'Follow-up answer');});
