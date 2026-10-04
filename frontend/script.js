@@ -47,9 +47,20 @@ function drawMap(){
     target.dataset.roadId=edge.road_id;
     target.addEventListener('click',event=>openPopup(edge.road_id,node(edge.node_a),node(edge.node_b),event));
     svg.appendChild(target);
+    const mid=points[Math.floor((points.length-1)/2)];
+    const next=points[Math.floor((points.length-1)/2)+1]||points[points.length-1];
+    const midX=(mid.x+next.x)/2, midY=(mid.y+next.y)/2;
+    const roadLabel=label(midX,midY,edge.road_id,'road-label');
+    roadLabel.setAttribute('text-anchor','middle');
+    roadLabel.setAttribute('dominant-baseline','middle');
+    roadLabel.style.pointerEvents='none';
+    svg.appendChild(roadLabel);
   }
   for(const item of city.nodes){
     svg.appendChild(make('circle',{cx:item.x,cy:item.y,r:3,class:'junction'}));
+    const nodeLabel=label(item.x,item.y-6,item.id,'node-label');
+    nodeLabel.setAttribute('text-anchor','middle');
+    svg.appendChild(nodeLabel);
   }
   for(const entity of window.entities){
     const n=node(entity.location); if(!n) continue;
