@@ -1,14 +1,13 @@
 # Car Breakdown Dispatch System
 
-A small Flask + SVG application demonstrating explainable classical AI for dispatching a repair technician to a car breakdown.
+A Flask + SVG application demonstrating explainable classical AI for dispatching a repair technician (and, if needed, a parts store) to a car breakdown. Every decision — urgency inference, shop filtering, routing, scheduling, planning — is a separate, named AI technique with its reasoning printed as a human-readable log. There is no machine learning anywhere in this codebase.
 
 ## Run
 
 ```bash
-cd car-dispatch-ai
-uv venv
-source .venv/bin/activate
-uv pip install -r requirements.txt
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 python backend/app.py
 ```
 
@@ -37,3 +36,7 @@ python -m pytest -q
 ```
 
 The tests check that A* is no more costly than BFS on the same route, CSP results have the requested specialty, and repair never becomes ready before both technician and part arrival.
+
+## Docs
+
+See [docs/README.md](docs/README.md) for a per-technique breakdown (knowledge representation, CSP, search, adversarial search, planning) and a presentation-ready walkthrough of the request pipeline.
