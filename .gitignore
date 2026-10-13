@@ -1,1 +1,10 @@
+backend/__pycache__/
+backend/csp/__pycache__/
+backend/environment/__pycache__/
+backend/knowledge/__pycache__/
+backend/planning/__pycache__/
+backend/search/__pycache__/
+backend/utils/__pycache__/
+docs/.obsidian/
+docs/Untitled.md
 venv/
